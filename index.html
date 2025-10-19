@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrapper">
+    <h1>Snake Game</h1>
+
+    <div class="status">
+      <div class="scoreboard">
+        <span>Score: <strong id="score">0</strong></span>
+        <span>High: <strong id="high-score">0</strong></span>
+      </div>
+      <div class="controls">
+        <button id="toggle-btn">Start</button>
+        <button id="restart-btn">Restart</button>
+        <button id="sound-btn" aria-label="Toggle sound">🔊</button>
+        <label class="speed">
+          Speed
+          <input id="speed" type="range" min="5" max="15" value="10" />
+        </label>
+      </div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="game" width="400" height="400"></canvas>
+
+      <div class="mobile-controls" aria-label="Directional controls">
+        <button id="btn-up" aria-label="Up">▲</button>
+        <div class="middle-row">
+          <button id="btn-left" aria-label="Left">◀</button>
+          <button id="btn-right" aria-label="Right">▶</button>
+        </div>
+        <button id="btn-down" aria-label="Down">▼</button>
+      </div>
+    </div>
+
+    <p class="hint">
+      Use arrow keys. Press space to pause/resume. R to restart.
+    </p>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
