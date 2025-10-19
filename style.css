@@ -37,13 +37,13 @@ canvas { background: var(--panel); border: 1px solid #253055; box-shadow: 0 6px 
 .hint { text-align: center; opacity: .75; margin-top: 12px; font-size: .9rem; }
 
 .mobile-controls {
-  position: absolute;
-  inset: 8px;
+  position: static;
   display: none;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  pointer-events: none;
+  gap: 10px;
+  pointer-events: auto;
+  margin-top: 10px;
 }
 .mobile-controls button {
   pointer-events: auto;
@@ -58,7 +58,16 @@ canvas { background: var(--panel); border: 1px solid #253055; box-shadow: 0 6px 
 .mobile-controls .middle-row { display: flex; gap: 8px; }
 
 @media (pointer: coarse) {
-  .mobile-controls { display: flex; flex-direction: column; }
+  .canvas-wrap { display: flex; flex-direction: column; align-items: center; }
+  .mobile-controls {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+  }
+  #btn-up { grid-column: 2; grid-row: 1; }
+  .mobile-controls .middle-row { grid-column: 2; grid-row: 2; display: grid; grid-template-columns: auto auto; gap: 10px; }
+  #btn-down { grid-column: 2; grid-row: 3; }
 }
 
 @media (max-height: 560px) {

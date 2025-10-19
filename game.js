@@ -9,8 +9,11 @@ let CELL = 0; // cell size in CSS px
 
 function resizeCanvas() {
   const dpr = window.devicePixelRatio || 1;
-  const target = Math.min(window.innerWidth * 0.94, window.innerHeight * 0.76, 540);
-  const finalSize = Math.max(240, Math.floor(target));
+  const isCoarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  const reserve = isCoarse ? Math.max(120, Math.min(window.innerHeight * 0.18, 180)) : 0; // space for D-pad
+  const availableH = Math.max(240, window.innerHeight - reserve);
+  const target = Math.min(window.innerWidth * 0.94, availableH * 0.94, 560);
+  const finalSize = Math.max(220, Math.floor(target));
   canvas.style.width = finalSize + 'px';
   canvas.style.height = finalSize + 'px';
   canvas.width = Math.floor(finalSize * dpr);
