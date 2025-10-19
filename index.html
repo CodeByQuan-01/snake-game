@@ -10,6 +10,17 @@
   <main class="wrapper">
     <h1>Snake Game</h1>
 
+    <div class="canvas-wrap">
+      <canvas id="game" width="400" height="400"></canvas>
+
+      <div class="mobile-controls" aria-label="Directional controls">
+        <button id="btn-up" aria-label="Up">▲</button>
+        <button id="btn-left" aria-label="Left">◀</button>
+        <button id="btn-right" aria-label="Right">▶</button>
+        <button id="btn-down" aria-label="Down">▼</button>
+      </div>
+    </div>
+
     <div class="status">
       <div class="scoreboard">
         <span>Score: <strong id="score">0</strong></span>
@@ -23,19 +34,6 @@
           Speed
           <input id="speed" type="range" min="5" max="15" value="10" />
         </label>
-      </div>
-    </div>
-
-    <div class="canvas-wrap">
-      <canvas id="game" width="400" height="400"></canvas>
-
-      <div class="mobile-controls" aria-label="Directional controls">
-        <button id="btn-up" aria-label="Up">▲</button>
-        <div class="middle-row">
-          <button id="btn-left" aria-label="Left">◀</button>
-          <button id="btn-right" aria-label="Right">▶</button>
-        </div>
-        <button id="btn-down" aria-label="Down">▼</button>
       </div>
     </div>
 
